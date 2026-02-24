@@ -95,6 +95,14 @@ export const chatHandler = async (req, res) => {
           [sessionId, "assistant", aiReply]
         );
 
+        // Update session updated_at timestamp
+        db.run(
+          `UPDATE sessions
+           SET updated_at = CURRENT_TIMESTAMP
+           WHERE id = ?`,
+          [sessionId]
+        );
+
         // Return response
         return res.json({
           reply: aiReply,

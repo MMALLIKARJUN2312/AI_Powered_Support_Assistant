@@ -7,6 +7,10 @@ dotenv.config();
 
 initializeDb();
 
+if (!process.env.GEMINI_API_KEY) {
+  console.error("GEMINI_API_KEY is missing in environment variables.");
+  process.exit(1);
+}
 initializeGemini(process.env.GEMINI_API_KEY)
 
 const PORT = process.env.PORT || 5000;
