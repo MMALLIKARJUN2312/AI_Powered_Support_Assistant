@@ -11,6 +11,7 @@ const __dirname = path.dirname(__filename);
 const docsPath = path.join(__dirname, "../data/docs.json");
 const docsData = JSON.parse(fs.readFileSync(docsPath, "utf-8"));
 
+// Handle POST /api/chat requests
 export const chatHandler = async (req, res) => {
   try {
     const { sessionId, message } = req.body;
@@ -106,4 +107,53 @@ export const chatHandler = async (req, res) => {
       error: "Internal server error"
     });
   }
+};
+
+// Fetch all messages for a session
+
+export const getConversationHandler = (req, res) => {
+  const { sessionId } = req.params;
+
+  if (!sessionId) {
+    return res.status(400).json({
+      error: "sessionId parameter is required"
+    });
+  }
+
+  db.all(
+    `SELECT role, content, created_at
+     FROM messages
+     WHERE session_id = ?
+     ORDER BY created_at ASC`,
+    [sessionId],
+    (err, rows) => {
+      if (err) {
+        return res.status(500).json({
+          error: "Database fetch error"
+        });
+      }
+
+      return res.json(rows);
+    }
+  );
+};
+
+// List all sessions
+
+export const getSessionsHandler = (req, res) => {
+  db.all(
+    `SELECT id, created_at, updated_at
+     FROM sessions
+     ORDER BY updated_at DESC`,
+    [],
+    (err, rows) => {
+      if (err) {
+        return res.status(500).json({
+          error: "Database fetch error"
+        });
+      }
+
+      return res.json(rows);
+    }
+  );
 };

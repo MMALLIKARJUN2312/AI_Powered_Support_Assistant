@@ -1,8 +1,15 @@
 import express from 'express';
-import { chatHandler } from '../controllers/chatController';
+import { chatHandler, getConversationHandler, getSessionsHandler } from '../controllers/chatController';
 
 const router = express.Router();
 
+// Post chat
 router.post("/chat", chatHandler);
+
+// Get conversation by session
+router.get("/conversations/:sessionId", getConversationHandler);
+
+// Get all sessions
+router.get("/sessions", getSessionsHandler);
 
 export default router;
