@@ -1,0 +1,118 @@
+[
+  {
+    "title": "Reset Password",
+    "content": "Users can reset password from Settings > Security."
+  },
+  {
+    "title": "Refund Policy",
+    "content": "Refunds are allowed within 7 days of purchase."
+  },
+  {
+    "title": "Change Email Address",
+    "content": "Users can change their email address from Settings > Profile > Edit Email."
+  },
+  {
+    "title": "Delete Account",
+    "content": "Users can delete their account permanently from Settings > Account > Delete Account."
+  },
+  {
+    "title": "Subscription Plans",
+    "content": "We offer Basic, Pro, and Enterprise subscription plans with different feature limits."
+  },
+  {
+    "title": "Cancel Subscription",
+    "content": "Users can cancel their subscription from Billing > Manage Subscription."
+  },
+  {
+    "title": "Payment Methods",
+    "content": "We accept credit cards, debit cards, and UPI for payments."
+  },
+  {
+    "title": "Update Payment Method",
+    "content": "Users can update their payment method from Billing > Payment Methods."
+  },
+  {
+    "title": "Data Privacy",
+    "content": "User data is encrypted and stored securely in compliance with industry standards."
+  },
+  {
+    "title": "Two-Factor Authentication",
+    "content": "Users can enable two-factor authentication from Settings > Security > Two-Factor Authentication."
+  },
+  {
+    "title": "Contact Support",
+    "content": "Users can contact support via the Help Center or by emailing support@gmail.com."
+  },
+  {
+    "title": "Download Invoice",
+    "content": "Invoices can be downloaded from Billing > Invoices section."
+  },
+  {
+    "title": "Account Suspension",
+    "content": "Accounts may be suspended if they violate our terms of service."
+  },
+  {
+    "title": "Restore Account",
+    "content": "Suspended accounts can be restored by contacting customer support."
+  },
+  {
+    "title": "Update Profile Information",
+    "content": "Users can update their profile information from Settings > Profile."
+  },
+  {
+    "title": "Recover Deleted Account",
+    "content": "Deleted accounts cannot be recovered once permanently removed."
+  },
+  {
+    "title": "Disable Two-Factor Authentication",
+    "content": "Users can disable two-factor authentication from Settings > Security."
+  },
+  {
+    "title": "Upgrade Subscription",
+    "content": "Users can upgrade their subscription from Billing > Manage Subscription."
+  },
+  {
+    "title": "Downgrade Subscription",
+    "content": "Users can downgrade their subscription from Billing > Manage Subscription."
+  },
+  {
+    "title": "Late Payment Policy",
+    "content": "Accounts with overdue payments may experience temporary service suspension."
+  },
+  {
+    "title": "Data Retention Policy",
+    "content": "We retain user data as long as the account remains active."
+  },
+  {
+    "title": "Export Account Data",
+    "content": "Users can export their account data from Settings > Privacy > Export Data."
+  },
+  {
+    "title": "Restore Suspended Account",
+    "content": "Suspended accounts can be restored by contacting customer support."
+  },
+  {
+    "title": "System Requirements",
+    "content": "The platform supports the latest versions of Chrome, Firefox, Safari, and Edge browsers."
+  },
+  {
+    "title": "Mobile App Availability",
+    "content": "The mobile app is available for both Android and iOS devices."
+  },
+  {
+    "title": "API Access",
+    "content": "API access is available for Pro and Enterprise subscription plans."
+  },
+  {
+    "title": "Change Password",
+    "content": "Users can change their password from Settings > Security > Change Password."
+  },
+  {
+    "title": "Login Issues",
+    "content": "Users experiencing login issues should reset their password or contact support."
+  },
+  {
+    "title": "Account Verification",
+    "content": "Users must verify their email address during account registration."
+  }
+]
