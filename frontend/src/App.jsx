@@ -7,6 +7,7 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null)
 
   const sessionId = getOrCreateSessionId();
 
@@ -25,7 +26,9 @@ function App() {
   }, [sessionId]);
 
   const handleSend = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || loading) return;
+
+    setError(null);
 
     const userMessage = {
       role: "user",
@@ -40,7 +43,7 @@ function App() {
     try {
       const response = await sendMessage({
         sessionId,
-        message: input
+        message: userMessage.content
       });
 
       const assistantMessage = {
@@ -50,8 +53,8 @@ function App() {
       };
 
       setMessages(previous => [...previous, assistantMessage]);
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -81,10 +84,14 @@ function App() {
         <input
           type="text"
           value={input}
+          disabled={loading}
           placeholder="Type your question..."
           onChange={(event) => setInput(event.target.value)}
         />
-        <button onClick={handleSend}>Send</button>
+        <button onClick={handleSend} disabled={loading}>
+          {loading ? "Sending..." : "Send"}
+        </button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
     </div>
   );
