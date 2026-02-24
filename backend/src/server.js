@@ -1,5 +1,8 @@
 import dotenv from 'dotenv';
 import app from './app.js';
+import initializeDb from './config/initializeDb.js';
+
+initializeDb();
 
 dotenv.config();
 
