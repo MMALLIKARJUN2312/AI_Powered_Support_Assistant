@@ -74,6 +74,7 @@ export const chatHandler = async (req, res) => {
         try {
           aiReply = await generateResponse(prompt);
         } catch (error) {
+            console.error("Gemini Error", error)
           return res.status(500).json({
             error: "LLM service failure"
           });

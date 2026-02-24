@@ -1,6 +1,4 @@
-import { use } from "react"
-
-export const prompt = ({docs, history, userMessage}) => {
+export const buildPrompt = ({docs, history, userMessage}) => {
     return `
         You are a customer support assistant.
 

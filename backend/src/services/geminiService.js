@@ -6,7 +6,7 @@ export const initializeGemini = (apiKey) => {
     const genAI = new GoogleGenerativeAI(apiKey);
 
     model = genAI.getGenerativeModel({
-        model : "gemini-1.5-flash"
+        model : "gemini-2.5-flash"
     })
 }
 
@@ -15,7 +15,7 @@ export const generateResponse = async (prompt) => {
         throw new Error("Gemini is not initialized");
     }
 
-    const result = await model.generateContext(prompt);
+    const result = await model.generateContent(prompt);
     const response = await result.response;
 
     return response.text();
