@@ -8,9 +8,9 @@ If the is not found in the documentation, it responds with:
 
 ## Live Demo
 
-### Frontend : [] ()
+### Frontend : [https://ai-powered-support-assistant-three.vercel.app/] (https://ai-powered-support-assistant-three.vercel.app/)
 
-### Backend API : 
+### Backend API : [https://ai-powered-support-assistant-v5th.onrender.com] (https://ai-powered-support-assistant-v5th.onrender.com)
 
 ## Sample UI Screenshots
 
