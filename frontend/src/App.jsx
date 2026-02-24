@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { sendMessage, fetchConversation } from "./services/api";
 import { getOrCreateSessionId, createNewSession } from "./utils/session";
-import "./styles/chat.css";
+import "./index.css";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -65,36 +65,48 @@ function App() {
     window.location.reload();
   };
 
-  return (
-    <div className="chat-container">
+return (
+  <div className="chat-container">
+    
+    <div className="chat-header">
       <h2>AI Support Assistant</h2>
+      <button className="new-chat-btn" onClick={handleNewChat}>
+        New Chat
+      </button>
+    </div>
 
-      <button onClick={handleNewChat}>New Chat</button>
-
+    <div className="messages">
       {messages.map((msg, index) => (
         <div key={index} className={`message ${msg.role}`}>
           <div>{msg.content}</div>
-          <small>{new Date(msg.created_at).toLocaleString()}</small>
+          <small>
+            {new Date(msg.created_at).toLocaleTimeString()}
+          </small>
         </div>
       ))}
-
-      {loading && <p>Generating response...</p>}
-
-      <div className="input-container">
-        <input
-          type="text"
-          value={input}
-          disabled={loading}
-          placeholder="Type your question..."
-          onChange={(event) => setInput(event.target.value)}
-        />
-        <button onClick={handleSend} disabled={loading}>
-          {loading ? "Sending..." : "Send"}
-        </button>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      </div>
     </div>
-  );
+
+    {loading && <p>Generating response...</p>}
+
+    <div className="input-container">
+      <input
+        type="text"
+        value={input}
+        disabled={loading}
+        placeholder="Type your question..."
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button
+        className="send-btn"
+        onClick={handleSend}
+        disabled={loading}
+      >
+        {loading ? "Sending..." : "Send"}
+      </button>
+    </div>
+
+  </div>
+);
 }
 
 export default App;
